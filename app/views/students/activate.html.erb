@@ -1,0 +1,6 @@
+<h1>Student Active Status</h1>
+<form action="/students/<%=@student.id%>" method="PATCH">
+    <input type="radio" name="active" value="true"> True<br>
+    <input type="radio" name="active" value="false"> False<br>
+    <input type="submit" name="submit" id="<%=@student.id%>">
+</form>
