@@ -1,5 +1,19 @@
 <div>
-  <% @students.each do |student| %>
-    <div><%= student.first_name + " " + student.last_name %></div>
-  <% end %>
+    <% @students.each do |student| %>
+        <%# Use a link_to helper method to make each name a link to the show page. %>
+        
+        <%# original code. %>
+        <%# <div><%= #student.first_name + " " + student.last_name</div> %>
+
+        <%# Rails version(s) of code. %>
+        <%= link_to student.to_s, "/students/#{student.id}" %><br>
+        <%= link_to student.to_s, student_path(student.id) %><br>
+        
+        <%# This last line does not link correctly. %>
+        <%= link_to student.to_s, student_path(student) %><br>
+
+    <% end %>
 </div>
+
+
+        
